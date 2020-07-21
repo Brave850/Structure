@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct employee {
+	char empname[20];
+	char dptname[30];
+	int salary;
+};
+void PrintEmployee(struct employee data[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("%s\t\t\t%s\t\t%d\n",data[i].empname,data[i].dptname,data[i].salary);
+		
+		printf("\n");
+	}
+}
+int main()
+{
+	int n;
+	printf("Enter the employee numbers: ");
+	scanf("%d",&n);
+	printf("\n");
+	struct employee empno[n];
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("Enter the employee%d's name: ",i+1);
+		scanf("%s",&empno[i].empname);
+		printf("Enter the employee%d's Department Name: ",i+1);
+		scanf("%s",&empno[i].dptname);
+		printf("Enter the person%d's Salary: ",i+1);
+		scanf("%d",&empno[i].salary);
+		printf("\n");
+	}
+	printf("\n");
+	printf("Employee Name:\t\tDepartment Name:\tSalary:\n");
+	printf("\n");
+	PrintEmployee(empno,n);
+	
+	return 0;	
+}
